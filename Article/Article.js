@@ -179,6 +179,3 @@ const articles = document.querySelector('.articles');
 data.map(d => {
   articles.appendChild(createArticle(d));
 })
-
-
-

@@ -56,9 +56,3 @@ const createMenu = (menuArray) => {
 }
 
 document.querySelector('.header').appendChild(createMenu(menuItems));
-
-
-
-
-
-
