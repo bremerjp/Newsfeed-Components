@@ -148,11 +148,14 @@ const createArticle = (dataObj) => {
   const paragraphTwo = document.createElement('p');
   const paragraphThree = document.createElement('p');
   const expand = document.createElement('span');
+  const close = document.createElement('span');
+
   
   article.classList.add('article');
   articleTitle.classList.add('h2');
   articleDate.classList.add('date');
   expand.classList.add('expandButton');
+  close.classList.add('close');
   
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
@@ -160,6 +163,7 @@ const createArticle = (dataObj) => {
   article.appendChild(paragraphTwo);
   article.appendChild(paragraphThree);
   article.appendChild(expand);
+  article.appendChild(close);
 
   articleTitle.textContent = dataObj.title;
   articleDate.textContent = dataObj.date;
@@ -167,9 +171,15 @@ const createArticle = (dataObj) => {
   paragraphTwo.textContent = dataObj.secondParagraph;
   paragraphThree.textContent = dataObj.thirdParagraph;
   expand.textContent = 'Read Article';
+  close.textContent = 'Close';
 
   expand.addEventListener('click', event => {
     article.classList.toggle('article-open');
+    expand.classList.toggle('article-close');
+  })
+
+  close.addEventListener('click', event => {
+    article.classList.toggle('article-close');
   })
   return article;
 }
